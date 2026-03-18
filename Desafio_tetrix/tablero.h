@@ -13,6 +13,9 @@ public:
     ~Tablero();
 
     void mostrar();
+    bool validarEspacio (int f, int c);
+    void colocarPieza (int f, int c, int valor);
+    bool filaLlena (int f);
 
 };
 #endif // TABLERO_H

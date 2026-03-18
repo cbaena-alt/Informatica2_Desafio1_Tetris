@@ -21,6 +21,7 @@
      delete [] malla;
  }
 
+ //muestra el tablero en consola
  void Tablero:: mostrar() {
      for (int i = 0; i< filas; i++){
          for(int j=0; j< columnas; j++ ){
@@ -30,3 +31,32 @@
      }
  }
 
+ // revisa si la posición es valida y esta vacia
+ bool Tablero :: validarEspacio (int f, int c){
+     //si se sale de los bordes
+     if (f >= filas or c < 0 or c >= columnas){
+         return false;
+     }
+     // Si la celda ya está ocupada
+     if (malla[f][c] != 0) {
+         return false;
+     }
+     return true;
+ }
+
+ //pinta el valor en el tablero
+ void Tablero :: colocarPieza(int f, int c, int valor){
+     if (f >= 0 and f < filas and c < columnas){
+         malla [f][c] = (unsigned char)valor;
+     }
+ }
+
+ //comprueba si hay una fila llena
+ bool Tablero :: filaLlena(int f){
+     for (int j = 0; j<= columnas; j++){
+         if (malla [f][j] == 0){
+             return false;
+         }
+     }
+     return true;
+ }
