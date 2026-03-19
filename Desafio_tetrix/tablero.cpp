@@ -60,3 +60,26 @@
      }
      return true;
  }
+
+//mueve todo lo de arriba hacia abajo
+ void Tablero:: desplazarHaciaAbajo (int filaInicio){
+     for (int i = filaInicio; i>0; i--){
+         for(int j=0; j<columnas; j++){
+             malla[i][j] = malla [i-j][j];
+         }
+
+     }
+     //la fila superior queda vacia
+     for (int j=0; j< columnas; j++){
+         malla [0][j]=0;
+     }
+ }
+
+ //Limpia las lineas completas
+ void Tablero:: LimpiarLineas(){
+     for(int i=0; i<filas; i++){
+         if (filaLlena(i)){
+             desplazarHaciaAbajo(i);
+         }
+     }
+ }

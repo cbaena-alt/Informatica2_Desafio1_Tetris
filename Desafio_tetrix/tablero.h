@@ -16,6 +16,8 @@ public:
     bool validarEspacio (int f, int c);
     void colocarPieza (int f, int c, int valor);
     bool filaLlena (int f);
+    void desplazarHaciaAbajo (int filaInicio);
+    void LimpiarLineas ();
 
 };
 #endif // TABLERO_H
