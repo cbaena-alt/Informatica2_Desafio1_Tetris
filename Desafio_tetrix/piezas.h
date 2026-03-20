@@ -1,12 +1,14 @@
-class Pieza {
-private:
+#ifndef PIEZAS_H
+#define PIEZAS_H
 
+class Pieza {
+public:
     unsigned short forma;
     int x, y;
 
 public:
-
     Pieza();
+    void caer();
     void rotar();
     void moverIzquierda();
     void moverDerecha();
@@ -14,3 +16,4 @@ public:
     void dibujar();
 };
 
+#endif // PIEZAS_H
