@@ -1,8 +1,14 @@
 #include "piezas.h"
 
+#include <iostream>
+
 Pieza::Pieza() {
     x = 0; y = 0;
     forma = 0;
+}
+
+void Pieza::caer() {
+    y++;
 }
 
 
@@ -33,6 +39,20 @@ void Pieza::rotar() {
 }
 
 
+
+void Pieza::dibujar() {
+    for (int fila = 0; fila < 4; fila++) {
+        for (int col = 0; col < 4; col++) {
+
+            if (forma & (1 << (fila * 4 + col))) {
+                std::cout << "*";
+            } else {
+                std::cout << ".";
+            }
+        }
+        std::cout << std::endl;
+    }
+}
 
 void Pieza::obtenerPieza(int tipo) {
     switch(tipo) {

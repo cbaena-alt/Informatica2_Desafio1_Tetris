@@ -1,17 +1,16 @@
-#ifndef PIEZAS_H
-#define PIEZAS_H
-
 class Pieza {
+private:
+
+    unsigned short forma;
+    int x, y;
+
 public:
-    unsigned short forma; // Usamos 16 bits para una rejilla de 4x4
-    int x, y;            // Posición en el tablero
 
     Pieza();
-    void cargarCuadrado();   // Pieza O
-    void cargarLinea();      // Pieza I
-    void moverDerecha();     // Usará >>
-    void moverIzquierda();   // Usará <<
-    void rotar();            // El reto de bits
+    void rotar();
+    void moverIzquierda();
+    void moverDerecha();
+    void obtenerPieza(int tipo);
+    void dibujar();
 };
 
-#endif
